@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DPC/ISR Latency Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>DPC/ISR Latency Analyzer</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+      <input type="file" id="etlFile" name="etlFile" accept=".etl" required>
+      <button type="submit">Upload and Analyze</button>
+    </form>
+
+    <table id="resultsTable">
+      <thead>
+        <tr>
+          <th onclick="sortTable(0)">Module</th>
+          <th onclick="sortTable(1)">Max Duration (µs) <span id="arrow1" class="arrow"></span></th>
+          <th onclick="sortTable(2)">Avg Duration (µs) <span id="arrow2" class="arrow"></span></th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
